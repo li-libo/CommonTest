@@ -1,5 +1,4 @@
 package test;
-import static org.hamcrest.CoreMatchers.not;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -37,7 +36,7 @@ import org.json.JSONObject;
 import org.junit.Test;
 
 
-public class JavaTest {
+public class ReadWriteLockTest {
 	
 	private final ReentrantReadWriteLock readWriteLock = new ReentrantReadWriteLock(false);
     private final WriteLock writeLock = readWriteLock.writeLock();
