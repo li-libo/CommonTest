@@ -6,11 +6,10 @@ package test;
 public class Interrupt {
    public static void main(String[] args) throws Exception {
        Thread t = new Thread(new Worker());
+       t.setName("test线程");
        t.start();
-
        Thread.sleep(100);
        t.interrupt();
-
        System.out.println("Main thread stopped.");
    }
 
@@ -32,7 +31,7 @@ public class Interrupt {
                /**
                 * 清除线程的中断状态
                 */
-               Thread.interrupted();
+               System.out.println("当前线程是否中断?" + Thread.interrupted());
                System.out.println("清除线程的中断状态interrupted()---Worker IsInterrupted?" +
                        Thread.currentThread().isInterrupted());
            }
